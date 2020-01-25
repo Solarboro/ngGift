@@ -1,0 +1,49 @@
+
+<h2 class='ui dividing red header'>
+    <i class='icon plus circle'></i>
+    New Gift
+</h2>
+
+<form class='ui form segment'>
+    <div class='two fields'>
+
+        <div class='four wide field'>
+            <label>Level</label>
+            <select class='ui dropdown giftlevel'>
+                <option value='1'>一等奖</option>
+                <option value='2'>二等奖</option>
+                <option value='3'>三等奖</option>
+            </select>
+        </div>
+
+        <div class='field'>
+            <label>Donator</label>
+            <input type='text' placeholder="Frank">
+        </div>
+        
+    </div>
+
+    <div class='ui field'>
+        <label>Desc</label>
+        <textarea rows='1' #ta></textarea>
+    </div>
+    <div class='ui red button' tabindex="1" (click)='newGift(ta.value)'>Add</div>
+</form>
+
+
+<h2 class='ui dividing red header'>
+    <i class='icon gift'></i>
+    Gift List
+</h2>
+<!-- <button class='ui button' (click)='startGift()'>Start</button>
+<button class='ui button' (click)='stopGift()'>Stop</button> -->
+<div class="ui four column grid">
+    <div class="column" *ngFor='let gift of gms.getGiftList(); let z=index'>
+
+      <app-gift-list [gift]='gift'></app-gift-list>
+
+
+    </div>
+
+  </div>
+

@@ -1,0 +1,20 @@
+
+      <div class="ui card" >
+        <label class='ui red label top attached' *ngIf='gift.owner'>{{gift.owner}}</label>
+        <div class="image">
+          <img src="{{gift.iurl}}">
+        </div>
+        <div class="content">
+          <a class="header">{{gift.desc}}</a>
+          <div class="description">
+            {{gift.level}}
+          </div>
+        </div>
+        <div class="extra content">
+          <a>
+            <i class="user icon"></i>
+            {{gift.owner}}
+          </a>
+        </div>
+      </div>
+
