@@ -1,19 +1,20 @@
 
-      <div class="ui card" >
-        <label class='ui red label top attached' *ngIf='gift.owner'>{{gift.owner}}</label>
+      <!-- <div class="ui card" (click)="gameStart()" > -->
+      <div class="ui card">
+        <label class='ui red label top attached' *ngIf='gift.owner'>{{gift.owner}} 中奖</label>
         <div class="image">
           <img src="{{gift.iurl}}">
         </div>
         <div class="content">
           <a class="header">{{gift.desc}}</a>
           <div class="description">
-            {{gift.level}}
+            <label class='ui orange inverted label'>{{gift.level}}</label>
           </div>
         </div>
         <div class="extra content">
           <a>
             <i class="user icon"></i>
-            {{gift.owner}}
+            本奖品由<label class='ui mini red basic label'>{{gift.donator}}</label>赞助
           </a>
         </div>
       </div>

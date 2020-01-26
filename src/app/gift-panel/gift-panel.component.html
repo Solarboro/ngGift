@@ -4,7 +4,7 @@
     New Gift
 </h2>
 
-<form class='ui form segment'>
+<form class='ui form segment '>
     <div class='two fields'>
 
         <div class='four wide field'>
@@ -37,10 +37,10 @@
 </h2>
 <!-- <button class='ui button' (click)='startGift()'>Start</button>
 <button class='ui button' (click)='stopGift()'>Stop</button> -->
-<div class="ui four column grid">
+<div class="ui stackable four column grid">
     <div class="column" *ngFor='let gift of gms.getGiftList(); let z=index'>
 
-      <app-gift-list [gift]='gift'></app-gift-list>
+      <app-gift-list [gift]='gift' [giftNo]='z'></app-gift-list>
 
 
     </div>

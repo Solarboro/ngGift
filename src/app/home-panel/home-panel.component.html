@@ -1,1 +1,21 @@
-<p>home-panel works!</p>
+
+
+  <div class="ui stackable six column grid">
+    <div class="column" *ngFor='let gift of gms.giftspool; let z=index'>
+        <div class="ui card" >
+            <label class='ui red label top attached' *ngIf='gift.owner'>{{gift.owner}} 中奖</label>
+            <div class="image">
+              <img src="{{gift.iurl}}">
+            </div>
+            <div class="content">
+              <a class="header">{{gift.desc}}</a>
+              <div class="description">
+                <label class='ui orange inverted label'>{{gift.level}}</label>
+              </div>
+            </div>
+          </div>
+    </div>
+
+  </div>
+
+

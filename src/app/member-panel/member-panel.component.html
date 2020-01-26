@@ -1,4 +1,72 @@
 
 
+<h2 class='ui dividing red header'>
+    <i class='icon circle plus'></i>
+    New Member
+</h2>
 
-<app-member-list *ngFor='let member of mms.getMemberList()' [member]='member'></app-member-list>
+<div class='ui segment '>
+
+    <form class='ui form'>
+
+        <div class='three fields'>
+            <div class='field'>
+                <label>User Name</label>
+                <input type='text' #name>
+            </div>
+            <div class='field'>
+                <label>Cell Phone</label>
+                <input type='text' #phoneNo>
+            </div>
+            <div class='field'>
+                <label>></label>
+                <div class='ui right floated red button' tabindex="0" (click)='newMember(name.value, phoneNo.value)'>Add </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+
+<h2 class='ui dividing red header'>
+    <i class='icon users'></i>
+    Member List
+</h2>
+
+<div class='ui divided list'>
+    <div class='item' *ngFor='let member of mms.getMemberList(), let z = index'>
+        <i class='icon user'></i>
+        <div class='content'>
+            <a class='header'>{{member.mName}}</a>
+            {{member.phoneNo}}
+        </div>
+        <button class='ui right floated mini red button' (click)='modal(z)'>抽奖</button>
+        
+    </div>
+</div>
+
+
+<div class="ui basic modal">
+    <div class="ui stackable six column grid">
+      <div class="column" *ngFor='let gift of gms.getGiftList(); let z=index'>
+          <div class="ui card" >
+              <label class='ui red label top attached' *ngIf='gift.owner'>{{gift.owner}} 中奖</label>
+              <div class="image">
+                <img src="{{gift.iurl}}">
+              </div>
+              <div class="content">
+                <a class="header">{{gift.desc}}</a>
+                <div class="description">
+                  <label class='ui orange inverted label'>{{gift.level}}</label>
+                </div>
+              </div>
+            </div>
+      </div>
+  
+    </div>
+    <div class="actions">
+        <button class='ui green button' (click)='closeModal()'>Close</button>
+        <button class='ui red button' (click)='gameStart()'>Start</button>
+    </div>
+  </div>
